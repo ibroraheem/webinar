@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Award, CheckCircle2, GraduationCap, Newspaper, Star, Trophy, Globe } from 'lucide-react';
-import RegistrationForm from './components/RegistrationForm';
+import RegistrationForm from '../components/RegistrationForm';
 
 function App() {
   const [showRegistration, setShowRegistration] = useState(false);
