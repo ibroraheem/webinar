@@ -1,0 +1,21 @@
+{
+  "name": "Global Business Acquisition - Business Coaching",
+  "short_name": "Business Coaching",
+  "description": "Learn how to acquire, fund & scale your business in Canada with our 6-week premium business coaching class",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1f44",
+  "theme_color": "#d4af37",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 

@@ -1,12 +1,71 @@
 import React, { useState } from 'react';
 import { Award, CheckCircle2, GraduationCap, Newspaper, Star, Trophy, Globe } from 'lucide-react';
 import RegistrationForm from './components/RegistrationForm';
+import { Helmet } from 'react-helmet-async';
 
 function App() {
   const [showRegistration, setShowRegistration] = useState(false);
 
+  // Structured data for the business coaching program
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Global Business Acquisition - 6-Week Premium Business Coaching Class",
+    "description": "A comprehensive 6-week business coaching program for entrepreneurs ready to acquire, fund & scale their business in Canada. Learn from real experience, not theory.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Business Acquisition Cohort",
+      "sameAs": "https://mintrite.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "1499",
+      "priceCurrency": "CAD",
+      "availability": "https://schema.org/InStock"
+    },
+    "courseCode": "GBA-2024",
+    "educationalLevel": "Advanced",
+    "timeToComplete": "P6W"
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>Global Business Acquisition - 6-Week Premium Business Coaching Class</title>
+        <meta name="title" content="Global Business Acquisition - 6-Week Premium Business Coaching Class" />
+        <meta name="description" content="Learn how to acquire, fund & scale your business in Canada with our 6-week premium business coaching class. Real experience, not theory. Join now!" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mintrite.com/" />
+        <meta property="og:title" content="Global Business Acquisition - 6-Week Premium Business Coaching Class" />
+        <meta property="og:description" content="Learn how to acquire, fund & scale your business in Canada with our 6-week premium business coaching class. Real experience, not theory. Join now!" />
+        <meta property="og:image" content="./images/family.jpg" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://mintrite.com/" />
+        <meta property="twitter:title" content="Global Business Acquisition - 6-Week Premium Business Coaching Class" />
+        <meta property="twitter:description" content="Learn how to acquire, fund & scale your business in Canada with our 6-week premium business coaching class. Real experience, not theory. Join now!" />
+        <meta property="twitter:image" content="./images/family.jpg" />
+
+        {/* Additional Meta Tags */}
+        <meta name="keywords" content="business acquisition, business coaching, Canada business, entrepreneur training, business funding, business scaling, immigrant entrepreneur, business ownership" />
+        <meta name="author" content="Business Acquisition Cohort" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://mintrite.com/" />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
       {/* Hero Section */}
       <header className="relative bg-[#0a1f44] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,10 +80,15 @@ function App() {
             <div className="mb-12">
               <div className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-lg shadow-xl">
                 <div className="aspect-w-16 aspect-h-9 bg-gray-200">
-                  <img src="./images/family.jpg" alt="My family of 7 starting our journey in Canada" className="w-full h-auto" />
+                  <img 
+                    src="./images/family.jpg" 
+                    alt="A happy family of 7 starting their new journey in Canada, representing successful immigrant entrepreneurship" 
+                    className="w-full h-auto"
+                    loading="eager"
+                  />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4">
-                  <p className="text-sm">My family of 7 starting our journey in Canada</p>
+                  <p className="text-sm">My family of 7 starting our journey in Canada as Business Immigrants</p>
                 </div>
               </div>
             </div>
@@ -35,23 +99,48 @@ function App() {
             <div className="mb-12">
               <div className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-lg shadow-xl">
                 <div className="aspect-w-16 aspect-h-9 bg-gray-200">
-                  <img src="./images/rest-1.jpg" alt="Restaurant 1" />
+                  <img 
+                    src="./images/rest-1.jpg" 
+                    alt="Successful restaurant acquisition showcase - Interior view of our thriving Chinese restaurant in Canada" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4">
+                  <p className="text-sm">Our Chinese restaurant - Interior view</p>
                 </div>
               </div>
             </div>
             <div className="mb-12">
               <div className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-lg shadow-xl">
                 <div className="aspect-w-16 aspect-h-9 bg-gray-200">
-                  <img src="./images/rest-2.jpg" alt="Restaurant 2" />
+                  <img 
+                    src="./images/rest-2.jpg" 
+                    alt="Restaurant success story - Bustling dining area of our acquired Chinese restaurant" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4">
+                  <p className="text-sm">Our Chinese restaurant - Dining area</p>
                 </div>
               </div>
             </div>
             <div className="mb-12">
               <div className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-lg shadow-xl">
                 <div className="aspect-w-16 aspect-h-9 bg-gray-200">
-                  <img src="./images/rest-3.jpg" alt="Restaurant 3" />
+                  <img 
+                    src="./images/rest-3.jpg" 
+                    alt="Business growth showcase - External view of our successfully acquired and scaled restaurant" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4">
+                  <p className="text-sm">Our Chinese restaurant - Exterior view</p>
                 </div>
               </div>
+            </div>
+            <div className="text-center mb-16">
+              <h3 className="text-2xl font-bold text-[#d4af37] mb-4">Owner of Chinese Restaurant in Canada</h3>
+              <p className="text-xl text-gray-200">Successfully acquired and scaled within 6 months of arriving in Canada</p>
             </div>
           </div>
         </div>
@@ -145,9 +234,11 @@ function App() {
       </section>
 
       {/* Module Outline Section */}
-      <section className="py-16 bg-[#0a1f44] text-white">
+      <section className="py-24 bg-[#0a1f44] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-[#d4af37]">The Module Outline</h2>
+          <div className="mb-16">
+            <h2 className="text-4xl font-bold text-center text-[#d4af37] border-b-4 border-[#d4af37] pb-4 inline-block mx-auto">The Module Outline</h2>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ModuleCard week="Week 1" title="Business Acquisition Foundation" topics={["Why Growth Through Acquisition?", "The Lifecycle of a Growth-Focused Acquisition", "DNA to Lead & Grow an Acquired Business"]} />
             <ModuleCard week="Week 2" title="Targeting the Right Business" topics={["Defining Your Acquisition Criteria", "Industry Selection & Market Trends", "Business Features That Align With Your Vision", "Building Your Seller Inquiry Strategy"]} />
@@ -155,49 +246,128 @@ function App() {
             <ModuleCard week="Week 4" title="Art of Deal Negotiation" topics={["Do I need a Professional?", "How to present winning offer", "Learn Powerful Negotiation skill", "Seller Psychology Analysis"]} />
             <ModuleCard week="Week 5" title="Deal Financing" topics={["Learn ways to Finance a Deal Smartly & Interest Free", "Debt vs Equity", "Strategic ways of Seller Financing", "Sweat equity vs Debt"]} />
             <ModuleCard week="Week 6" title="Deal Possession Day" topics={["Use of Escrow during sealing", "Deep dive into closing: Products and Services", "Operational handover", "Team Integration", "Launching of Business"]} />
-            <ModuleCard week="Bonus Module" title="Accessing Grant Funding" topics={["Crafting a winning pitch for different business grants", "Grant Business Readiness", "Finding the Right and Suitable Grants", "Writing a Winning Grant Proposal"]} />
-            <ModuleCard week="Bonus Module" title="Franchising Your Business" topics={["Developing Franchise Systems & Manuals", "Franchise Financial Model", "Attracting Right Franchisees & onboarding", "Supporting & Scaling Your Franchise"]} />
-            <ModuleCard week="Bonus Module" title="Start Bookkeeping Business" topics={["Introduction to Bookkeeping & the Opportunity", "Finding Clients", "Getting Paid by the first 30 Clients within 7 days", "Growing & Scaling Bookkeeping Business"]} />
+          </div>
+        </div>
+      </section>
+
+      {/* Bonus Modules Section */}
+      <section className="py-16 bg-gradient-to-br from-[#046307] via-[#0a1f44] to-[#046307] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-16">
+            <h2 className="text-4xl font-bold text-center text-[#d4af37] border-b-4 border-[#d4af37] pb-4 inline-block mx-auto">Bonus Modules</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border-2 border-[#d4af37] shadow-xl transform hover:scale-105 transition-transform duration-300">
+              <h3 className="text-[#d4af37] font-bold mb-2 text-xl">Bonus Module</h3>
+              <h4 className="text-2xl font-semibold mb-4 text-white">Accessing Grant Funding</h4>
+              <ul className="space-y-3">
+                {["Crafting a winning pitch for different business grants", "Grant Business Readiness", "Finding the Right and Suitable Grants", "Writing a Winning Grant Proposal"].map((topic, index) => (
+                  <li key={index} className="flex items-start">
+                    <CheckCircle2 className="w-5 h-5 text-[#d4af37] mr-2 flex-shrink-0" />
+                    <span className="text-gray-200">{topic}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border-2 border-[#d4af37] shadow-xl transform hover:scale-105 transition-transform duration-300">
+              <h3 className="text-[#d4af37] font-bold mb-2 text-xl">Bonus Module</h3>
+              <h4 className="text-2xl font-semibold mb-4 text-white">Franchising Your Business</h4>
+              <ul className="space-y-3">
+                {["Developing Franchise Systems & Manuals", "Franchise Financial Model", "Attracting Right Franchisees & onboarding", "Supporting & Scaling Your Franchise"].map((topic, index) => (
+                  <li key={index} className="flex items-start">
+                    <CheckCircle2 className="w-5 h-5 text-[#d4af37] mr-2 flex-shrink-0" />
+                    <span className="text-gray-200">{topic}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border-2 border-[#d4af37] shadow-xl transform hover:scale-105 transition-transform duration-300">
+              <h3 className="text-[#d4af37] font-bold mb-2 text-xl">Bonus Module</h3>
+              <h4 className="text-2xl font-semibold mb-4 text-white">Start Bookkeeping Business</h4>
+              <ul className="space-y-3">
+                {["Introduction to Bookkeeping & the Opportunity", "Finding Clients", "Getting Paid by the first 30 Clients within 7 days", "Growing & Scaling Bookkeeping Business"].map((topic, index) => (
+                  <li key={index} className="flex items-start">
+                    <CheckCircle2 className="w-5 h-5 text-[#d4af37] mr-2 flex-shrink-0" />
+                    <span className="text-gray-200">{topic}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 bg-[#0a1f44]">
+      <section className="py-24 bg-gradient-to-br from-[#1a1a1a] to-[#2d2d2d]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-[#d4af37]">Choose Your Preferred Access Plan</h2>
+          <div className="mb-16">
+            <h2 className="text-4xl font-bold text-center text-[#d4af37] border-b-4 border-[#d4af37] pb-4 inline-block mx-auto">Choose Your Preferred Access Plan</h2>
+          </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <PricingCard 
-              title="Classic Access" 
-              price="1,499" 
-              features={[
-                "Full Access to the 6 Full Module Outline & 1 Bonus Module",
-                "Weekly Live Group Sessions for 6 weeks",
-                "Downloadable Business Acquisition Templates & Worksheets",
-                "Actionable Workbooks for Each Week",
-                "Access to Replays",
-                "Access to Business networks and contacts",
-                "Bonus Module Grant Funding Accelerator"
-              ]} 
-              onEnroll={() => setShowRegistration(true)}
-            />
-            <PricingCard 
-              title="VIP Access" 
-              price="2,499" 
-              featured={true} 
-              features={[
-                "Full Access to the 6 Full Module Outline & 3 Bonus Modules",
-                "Weekly Live Group Sessions for 6 weeks",
-                "Downloadable Business Acquisition Templates & Worksheets",
-                "Actionable Workbooks for Each Week",
-                "Access to Replays",
-                "Access to Business networks and contacts",
-                "Bonus Module Grant Funding Accelerator",
-                "Bonus Module: Starting a Bookkeeping Business",
-                "Bonus: Setting up Billion Dollar Franchise Business"
-              ]} 
-              onEnroll={() => setShowRegistration(true)}
-            />
+            <div className="rounded-lg shadow-lg overflow-hidden border-2 border-[#0a1f44] bg-gradient-to-br from-[#0a1f44] to-[#1a3f64] transform hover:scale-105 transition-transform duration-300">
+              <div className="px-6 py-8">
+                <h3 className="text-2xl font-bold text-center mb-4 text-white">Classic Access</h3>
+                <div className="text-center mb-6">
+                  <span className="text-4xl font-bold text-white">$1,499</span>
+                  <p className="text-sm text-gray-300 mt-2">Early birds: $1,499 | Late birds: $4,999</p>
+                </div>
+                <ul className="space-y-4">
+                  {[
+                    "Full Access to the 6 Full Module Outline & 1 Bonus Module",
+                    "Weekly Live Group Sessions for 6 weeks",
+                    "Downloadable Business Acquisition Templates & Worksheets",
+                    "Actionable Workbooks for Each Week",
+                    "Access to Replays",
+                    "Access to Business networks and contacts",
+                    "Bonus Module Grant Funding Accelerator"
+                  ].map((feature, index) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle2 className="w-5 h-5 text-white mr-2 flex-shrink-0" />
+                      <span className="text-gray-200">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button 
+                  onClick={() => window.location.href = 'https://buy.stripe.com/9AQ7tr01x3Lk9vq7sx'}
+                  className="w-full mt-8 px-6 py-3 rounded-md font-semibold bg-white hover:bg-white/90 text-[#0a1f44] transition-all"
+                >
+                  Enroll Now
+                </button>
+              </div>
+            </div>
+            <div className="rounded-lg shadow-lg overflow-hidden border-2 border-[#d4af37] bg-gradient-to-br from-[#0a1f44] to-[#046307] transform hover:scale-105 transition-transform duration-300">
+              <div className="px-6 py-8">
+                <h3 className="text-2xl font-bold text-center mb-4 text-[#d4af37]">VIP Access</h3>
+                <div className="text-center mb-6">
+                  <span className="text-4xl font-bold text-[#d4af37]">$2,499</span>
+                  <p className="text-sm text-gray-300 mt-2">Early birds: $2,499 | Late birds: $8,999</p>
+                </div>
+                <ul className="space-y-4">
+                  {[
+                    "Full Access to the 6 Full Module Outline & 3 Bonus Modules",
+                    "Weekly Live Group Sessions for 6 weeks",
+                    "Downloadable Business Acquisition Templates & Worksheets",
+                    "Actionable Workbooks for Each Week",
+                    "Access to Replays",
+                    "Access to Business networks and contacts",
+                    "Bonus Module Grant Funding Accelerator",
+                    "Bonus Module: Starting a Bookkeeping Business",
+                    "Bonus: Setting up Billion Dollar Franchise Business"
+                  ].map((feature, index) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle2 className="w-5 h-5 text-[#d4af37] mr-2 flex-shrink-0" />
+                      <span className="text-gray-200">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button 
+                  onClick={() => window.location.href = 'https://buy.stripe.com/00g8xv4hNchQ8rm7sy'}
+                  className="w-full mt-8 px-6 py-3 rounded-md font-semibold bg-[#d4af37] hover:bg-[#d4af37]/90 text-[#0a1f44] transition-all"
+                >
+                  Enroll Now
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -256,50 +426,6 @@ function ModuleCard({ week, title, topics }: { week: string; title: string; topi
           </li>
         ))}
       </ul>
-    </div>
-  );
-}
-
-function PricingCard({ 
-  title, 
-  price, 
-  features, 
-  featured = false,
-  onEnroll 
-}: { 
-  title: string; 
-  price: string; 
-  features: string[]; 
-  featured?: boolean;
-  onEnroll: () => void;
-}) {
-  return (
-    <div className={`rounded-lg shadow-lg overflow-hidden ${featured ? 'border-2 border-[#d4af37] bg-gradient-to-br from-[#0a1f44] to-[#046307]' : 'border-2 border-[#0a1f44] bg-gradient-to-br from-[#0a1f44] to-[#1a3f64]'}`}>
-      <div className="px-6 py-8">
-        <h3 className={`text-2xl font-bold text-center mb-4 ${featured ? 'text-[#d4af37]' : 'text-white'}`}>{title}</h3>
-        <div className="text-center mb-6">
-          <span className={`text-4xl font-bold ${featured ? 'text-[#d4af37]' : 'text-white'}`}>${price}</span>
-          <p className="text-sm text-gray-300 mt-2">{featured ? 'Early birds: $2,499 | Late birds: $8,999' : 'Early birds: $1,499 | Late birds: $4,999'}</p>
-        </div>
-        <ul className="space-y-4">
-          {features.map((feature, index) => (
-            <li key={index} className="flex items-start">
-              <CheckCircle2 className={`w-5 h-5 ${featured ? 'text-[#d4af37]' : 'text-white'} mr-2 flex-shrink-0`} />
-              <span className="text-gray-200">{feature}</span>
-            </li>
-          ))}
-        </ul>
-        <button 
-          onClick={onEnroll}
-          className={`w-full mt-8 px-6 py-3 rounded-md font-semibold ${
-            featured 
-            ? 'bg-[#d4af37] hover:bg-[#d4af37]/90 text-[#0a1f44]' 
-            : 'bg-white hover:bg-white/90 text-[#0a1f44]'
-          }`}
-        >
-          Enroll Now
-        </button>
-      </div>
     </div>
   );
 }

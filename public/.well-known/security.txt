@@ -1,0 +1,6 @@
+# Security Policy
+Contact: mailto:security@mintrite.com
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: en
+Policy: https://mintrite.com/security-policy
+Hiring: https://mintrite.com/careers 
